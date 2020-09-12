@@ -1,0 +1,310 @@
+; vim: set ft=colortemplate nomodeline:
+Full name:   parakeet
+Short name:  parakeet
+Author:      Jesse Hoyos <jessehoyos@icloud.com>
+Description: A warm and energetic colorscheme
+
+Background: light
+Neovim:     yes
+
+;
+; Config vars
+;
+
+#if !exists('g:@shortname_italic_comments')
+    #let g:@shortname_italic_comments = 1
+#endif
+
+#if !exists('g:@shortname_italic_functions')
+    #let g:@shortname_italic_functions = 1
+#endif
+
+Color:      gry0 #fceee0 ~
+Color:      gry1 #ecdac9 ~
+Color:      gry2 #666c85 ~
+Color:      gry3 #4a5067 ~
+Color:      gryc #2d3243 ~
+Color:      srch #ffd506 ~
+Color:      grys #2d3243 ~
+Color:      gryp #bead9d ~
+Color:      sprd #f7003c ~
+Color:      spbl #0082ff ~
+Color:      spcy #0093b3 ~
+Color:      spmg #c709dd ~
+Color:      red_ #c6394c ~
+Color:      gold #8b6800 ~
+Color:      gren #00855A ~
+Color:      cyan #007089 ~
+Color:      blue #006dcc ~
+Color:      mgnt #a348ae ~
+
+Term Colors:  gry1  red_  gren  gold
+Term Colors:  blue  mgnt  spcy  gryc
+Term Colors:  gry3  sprd  cyan  gryp
+Term Colors:  cyan  srch  cyan  srch
+
+; We imitate iA Writer’s extremely minimal markdown highlighting to minimise
+; distraction when writing.
+
+markdownBold   none  none bold
+markdownItalic none  none italic
+markdownUrl    gry2 none underline
+markdownCode   none  gry1
+markdownFaded  gry2 none
+
+markdownBlockquote        -> None
+markdownCodeBlock         -> markdownCode
+markdownCodeDelimiter     -> markdownCode
+markdownH1Delimiter       -> markdownH1
+markdownH2Delimiter       -> markdownH2
+markdownH3Delimiter       -> markdownH3
+markdownH4Delimiter       -> markdownH4
+markdownH5Delimiter       -> markdownH5
+markdownH6Delimiter       -> markdownH6
+markdownId                -> markdownFaded
+markdownIdDeclaration     -> markdownFaded
+markdownLinkDelimiter     -> markdownFaded
+markdownLinkText          -> None
+markdownLinkTextDelimiter -> markdownFaded
+markdownListMarker        -> markdownFaded
+markdownRule              -> None
+
+; regular text
+Bold               none   none   bold
+Conceal            none   none
+Directory          none   none   bold
+EndOfBuffer        none   none
+Ignore             none   none
+Italic             none   none   italic
+ModeMsg            none   none
+MoreMsg            none   none
+Question           none   none
+NonText            none   none
+Normal             gry3   gry0
+Terminal           none   none
+Title              none   none   bold
+Underlined         none   none   underline
+
+; soft text
+Comment            gry2   none
+CursorLineNr       gry2   none
+LineNr             gry2   none
+
+; reverse regular text
+FoldColumn         gry3   none
+PmenuSel           gry3   gry0   reverse
+SignColumn         gry3   none
+StatusLine         gry3   gry0   reverse
+StatusLineTerm     gry3   gry0   reverse
+TabLineSel         gry3   gry0   reverse
+
+; reverse soft text
+VisualNOS          gry2   gry0   reverse
+
+; reverse hard text
+Cursor             gryc   gry0   reverse
+IncSearch          gryc   gry0   reverse
+
+; highlit
+ColorColumn        none   gry1
+CursorColumn       none   gry1
+CursorLine         none   gry1
+DiffChange         none   gry1
+Folded             none   gry1
+MatchParen         gryc   gryp
+Pmenu              gry3   gry1
+QuickFixLine       none   gry1
+StatusLineNC       gry3   gry1
+StatusLineTermNC   gry3   gry1
+TabLine            gry3   gry1
+ToolbarButton      gry3   gry1   bold
+WildMenu           gry3   gry1
+
+; solid lines
+PmenuSbar          gryp   gryp
+PmenuThumb         gry3   gry3
+TabLineFill        gry1   gry1
+ToolbarLine        gry1   gry1
+VertSplit          gryp   gryp
+
+; spellcheck undercurls
+SpellBad           none   none   g=undercurl   s=sprd   t=underline
+SpellCap           none   none   g=undercurl   s=spbl   t=underline
+SpellLocal         none   none   g=undercurl   s=spcy   t=underline
+SpellRare          none   none   g=undercurl   s=spmg   t=underline
+
+; gold types
+StorageClass       gold   none
+Structure          gold   none
+Type               gold   none
+Typedef            gold   none
+
+; reverse magenta warnings
+TooLong            mgnt   gry0   reverse
+WarningMsg         mgnt   gry0   reverse
+
+; blue names
+Function           blue   none
+Identifier         blue   none
+
+; reverse red errors and diff removals
+DiffDelete         red_   gry0   reverse
+DiffRemoved        red_   gry0   reverse
+Error              red_   gry0   reverse
+ErrorMsg           red_   gry0   reverse
+
+; red specials
+Debug              red_   none
+Delimiter          red_   none
+Special            red_   none
+SpecialChar        red_   none
+SpecialComment     red_   none
+SpecialKey         red_   none
+Tag                red_   none
+
+; reverse gold search matches and diff changes
+DiffChanged        gold   gry0   reverse
+DiffText           gold   gry0   reverse
+Search             srch   grys   reverse
+
+; green statements
+Conditional        gren   none
+Exception          gren   none
+Keyword            gren   none
+Label              gren   none
+Operator           gren   none
+Repeat             gren   none
+Statement          gren   none
+
+; reverse green diff additions
+DiffAdd            gren   gry0   reverse
+DiffAdded          gren   gry0   reverse
+
+; magenta meta-statements
+Define             mgnt   none
+Include            mgnt   none
+Macro              mgnt   none
+PreCondit          mgnt   none
+PreProc            mgnt   none
+
+; reverse cyan todos
+Todo               cyan   gry0   reverse
+
+; cyan constants
+Boolean            cyan   none
+Character          cyan   none
+Constant           cyan   none
+Float              cyan   none
+Number             cyan   none
+String             cyan   none
+
+; reverse blue visual selections
+Visual             blue   gry0   reverse
+Terminal         -> Normal
+
+TabLine          -> StatusLineNC
+TabLineFill      -> StatusLineNC
+TabLineSel       -> StatusLine
+
+StatusLineTerm   -> StatusLine
+StatusLineTermNC -> StatusLineNC
+
+VisualNOS        -> Visual
+
+; Diff
+
+diffAdded          -> DiffAdd
+diffBDiffer        -> WarningMsg
+diffChanged        -> DiffChange
+diffCommon         -> WarningMsg
+diffDiffer         -> WarningMsg
+diffFile           -> Directory
+diffIdentical      -> WarningMsg
+diffIndexLine      -> Number
+diffIsA            -> WarningMsg
+diffNoEOL          -> WarningMsg
+diffOnly           -> WarningMsg
+diffRemoved        -> DiffDelete
+
+; Syntax
+
+Boolean            -> Constant
+Character          -> Constant
+Float              -> Constant
+
+Conditional        -> Statement
+Exception          -> Statement
+Label              -> Statement
+Repeat             -> Statement
+
+Define             -> PreProc
+Macro              -> PreProc
+PreCondit          -> PreProc
+
+Structure          -> Type
+Typedef            -> Type
+
+Debug              -> Special
+SpecialChar        -> Special
+Tag                -> Special
+
+Noise              -> Delimiter
+StringDelimiter    -> Delimiter
+
+Conceal            -> Ignore
+NonText            -> Ignore
+SpecialKey         -> Ignore
+EndOfBuffer        -> Ignore
+Whitespace         -> Ignore
+
+Identifier         -> Include
+
+Searchlight        -> IncSearch
+cssBraces          -> Delimiter
+gitcommitOverflow  -> Error
+gitcommitSummary   -> Title
+helpHyperTextJump  -> Underlined
+htmlArg            -> Function
+htmlEndTag         -> Delimiter
+htmlLink           -> Underlined
+htmlSpecialTagName -> htmlTagName
+htmlTag            -> Delimiter
+htmlTagName        -> Statement
+rustAttribute      -> Delimiter
+rustDerive         -> rustAttribute
+rustDeriveTrait    -> rustDerive
+rustIdentifier     -> Typedef
+rustModPath        -> None
+rustSigil          -> Delimiter
+scssAttribute      -> Delimiter
+vimAutoCmdSfxList  -> Type
+vimAutoEventList   -> Identifier
+vimCmdSep          -> Special
+vimCommentTitle    -> SpecialComment
+vimContinue        -> Delimiter
+vimHighlight       -> Statement
+vimUserFunc        -> Function
+
+
+;
+; Activate config
+;
+
+; We override styling based on config vars here, rather than in the midst of
+; other highlight groups, so that the config vars’ effects can be edited
+; directly next to each other. An additional benefit of this strategy is that
+; the alignment of highlight group name, foreground, background, et cetera stays
+; unbroken.
+
+verbatim
+    if !g:@shortname_italic_comments
+        hi Comment        cterm=NONE gui=NONE
+        hi SpecialComment cterm=NONE gui=NONE
+    endif
+    if !g:@shortname_italic_functions
+        hi Function       cterm=NONE gui=NONE
+    endif
+endverbatim
+
+
+
